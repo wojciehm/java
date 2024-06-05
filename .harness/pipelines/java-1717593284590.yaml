@@ -1,0 +1,46 @@
+pipeline:
+  identifier: Build_java_1717593287692
+  name: Build java
+  orgIdentifier: default
+  projectIdentifier: justalab
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.wojciehmgithub
+        repoName: java
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          caching:
+            enabled: true
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: echo
+                  name: echo
+                  spec:
+                    command: echo hello world
+                  timeout: ""
+                  type: Run
+              - step:
+                  identifier: dockerbuild
+                  name: docker_build
+                  spec:
+                    caching: true
+                    connectorRef: <+input>
+                    repo: hello/world
+                    tags:
+                      - latest
+                  timeout: ""
+                  type: BuildAndPushDockerRegistry
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
