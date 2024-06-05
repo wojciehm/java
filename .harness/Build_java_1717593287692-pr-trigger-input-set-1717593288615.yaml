@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_java_1717593287692-pr-trigger-input-set
+  identifier: Build_java_1717593287692prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: justalab
+  pipeline:
+    identifier: Build_java_1717593287692
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
