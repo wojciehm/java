@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_java_1717614305125-push-trigger-input-set
+  identifier: Build_java_1717614305125pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: justalab
+  pipeline:
+    identifier: Build_java_1717614305125
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
