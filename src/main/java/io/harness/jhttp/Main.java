@@ -48,7 +48,7 @@ public final class Main {
         final Options options = new Options();
         options.addOption(OptionBuilder
                 .withLongOpt("port")
-                .withDescription(String.format("port to listen (default: %d)", DEFAULT_PORT))
+                .withDescription(String.format("port we want to listen (default: %d)", DEFAULT_PORT))
                 .hasArg()
                 .withArgName("PORT")
                 .withType(Number.class)
